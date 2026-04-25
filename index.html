@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shefa Qarmash</title>
-  <meta name="description" content="Personal site of Shefa Qarmash — Global Korea Scholarship (GKS) Undergraduate Awardee 2025, Embassy Track. Industrial Engineering at Hanyang University." />
+  <meta name="description" content="Personal site of Shefa Qarmash — Palestinian student, 2025 Global Korea Scholarship (GKS) Embassy Track awardee, studying Industrial Engineering at Hanyang University." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #faf8f4;
@@ -15,8 +15,11 @@
       --ink: #1a1a1a;
       --ink-soft: #4a4a4a;
       --muted: #8a8275;
-      --accent: #b8412f;
-      --accent-soft: #e8d5c4;
+      --accent: #ce1126;       /* Palestinian flag red */
+      --accent-deep: #a30d1f;
+      --accent-soft: #f5dcd9;
+      --olive: #4f6d3f;
+      --olive-soft: #d9e2cf;
       --line: #e6dfd0;
       --max-w: 760px;
     }
@@ -64,15 +67,14 @@
     a:hover { border-bottom-color: var(--accent); }
 
     /* Header */
-    header {
-      padding: 28px 0 0;
-    }
+    header { padding: 28px 0 0; }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.92rem;
+      gap: 16px;
     }
 
     nav .brand {
@@ -85,6 +87,7 @@
     nav ul {
       list-style: none;
       display: flex;
+      align-items: center;
       gap: 24px;
       margin: 0;
       padding: 0;
@@ -97,26 +100,44 @@
 
     nav ul a:hover { color: var(--accent); }
 
-    /* Hero */
-    .hero {
-      padding: 80px 0 60px;
+    /* Language toggle */
+    .lang-toggle {
+      font-family: inherit;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink-soft);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
+    .lang-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    [dir="rtl"] .lang-toggle {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.88rem;
+    }
+
+    /* Hero */
+    .hero { padding: 80px 0 60px; }
 
     .hero .eyebrow {
       display: inline-block;
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--accent-deep);
       background: var(--accent-soft);
       padding: 6px 12px;
       border-radius: 100px;
       margin-bottom: 22px;
     }
 
-    .hero h1 {
-      margin-bottom: 18px;
-    }
+    .hero h1 { margin-bottom: 18px; }
 
     .hero .lede {
       font-size: 1.15rem;
@@ -149,10 +170,8 @@
       padding: 48px 0;
       border-top: 1px solid var(--line);
     }
-
     section.about p + p { margin-top: 1em; }
 
-    /* Cards / lists */
     .item {
       display: flex;
       justify-content: space-between;
@@ -160,15 +179,12 @@
       padding: 18px 0;
       border-bottom: 1px solid var(--line);
     }
-
     .item:last-child { border-bottom: none; }
-
     .item .body p {
       margin: 4px 0 0;
       color: var(--ink-soft);
       font-size: 0.96rem;
     }
-
     .item .when {
       font-size: 0.88rem;
       color: var(--muted);
@@ -178,13 +194,7 @@
     }
 
     /* Tags */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .tag {
       font-size: 0.82rem;
       padding: 4px 11px;
@@ -192,6 +202,8 @@
       color: var(--ink-soft);
       border-radius: 100px;
     }
+    .tag:nth-child(3n+1) { background: var(--accent-soft); color: var(--accent-deep); }
+    .tag:nth-child(3n+2) { background: var(--olive-soft); color: var(--olive); }
 
     /* Contact */
     .contact-links {
@@ -214,128 +226,233 @@
     }
 
     @media (max-width: 540px) {
+      nav { flex-wrap: wrap; row-gap: 12px; }
       nav ul { gap: 16px; }
       .hero { padding: 56px 0 40px; }
       .item { flex-direction: column; gap: 4px; }
       .item .when { order: -1; }
     }
+
+    /* ---- Palestinian flourishes ---- */
+
+    .tatreez {
+      height: 14px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 8'><g fill='%23ce1126'><rect x='0' y='0' width='2' height='2'/><rect x='6' y='0' width='2' height='2'/><rect x='2' y='2' width='2' height='2'/><rect x='4' y='2' width='2' height='2'/><rect x='2' y='4' width='2' height='2'/><rect x='4' y='4' width='2' height='2'/><rect x='0' y='6' width='2' height='2'/><rect x='6' y='6' width='2' height='2'/><rect x='12' y='3' width='2' height='2'/><rect x='14' y='1' width='2' height='2'/><rect x='14' y='5' width='2' height='2'/><rect x='16' y='3' width='2' height='2'/><rect x='22' y='0' width='2' height='2'/><rect x='28' y='0' width='2' height='2'/><rect x='24' y='2' width='2' height='2'/><rect x='26' y='2' width='2' height='2'/><rect x='24' y='4' width='2' height='2'/><rect x='26' y='4' width='2' height='2'/><rect x='22' y='6' width='2' height='2'/><rect x='28' y='6' width='2' height='2'/></g></svg>");
+      background-repeat: repeat-x;
+      background-size: auto 14px;
+      background-position: center;
+      opacity: 0.85;
+    }
+    .tatreez.top { padding-top: 14px; }
+    .tatreez.bottom { margin-bottom: 8px; }
+
+    .arabic { font-family: 'Amiri', serif; direction: rtl; font-weight: 400; }
+
+    .hero .arabic-name {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--olive);
+      margin-bottom: 6px;
+    }
+
+    .olive-branch {
+      display: block;
+      width: 110px;
+      height: auto;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    .flag-pip {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 8px solid var(--accent);
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .closing {
+      text-align: center;
+      padding: 36px 0 24px;
+      color: var(--olive);
+      font-family: 'Amiri', serif;
+      font-size: 1.15rem;
+      direction: rtl;
+    }
+    .closing .latin {
+      display: block;
+      direction: ltr;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ---- RTL adjustments when Arabic is active ---- */
+    [dir="rtl"] body {
+      font-family: 'Cairo', 'Inter', sans-serif;
+      line-height: 1.85;
+    }
+    [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 {
+      font-family: 'Amiri', serif;
+      letter-spacing: 0;
+    }
+    [dir="rtl"] .hero .eyebrow {
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-size: 0.85rem;
+      font-family: 'Cairo', sans-serif;
+    }
+    [dir="rtl"] .hero .meta span::before {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+    [dir="rtl"] .flag-pip {
+      border-left: none;
+      border-right: 8px solid var(--accent);
+      margin-right: 0;
+      margin-left: 6px;
+    }
+    [dir="rtl"] nav .brand { font-family: 'Amiri', serif; }
+    [dir="rtl"] em, [dir="rtl"] strong { font-style: normal; }
+    [dir="rtl"] strong { font-weight: 700; color: var(--accent-deep); }
+    [dir="rtl"] .item { direction: rtl; }
+    [dir="rtl"] .item .when { font-family: 'Inter', sans-serif; }
+    [dir="rtl"] .closing { direction: rtl; }
+    [dir="rtl"] footer { direction: rtl; }
   </style>
 </head>
 <body>
+  <div class="tatreez top" aria-hidden="true"></div>
   <div class="wrap">
     <header>
       <nav>
-        <a href="#" class="brand">Shefa Qarmash</a>
+        <a href="#" class="brand" data-i18n="brand">Shefa Qarmash</a>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">العربية</button></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="top">
-        <span class="eyebrow">GKS-U 2025 · Embassy Track</span>
-        <h1>Hi, I'm Shefa.</h1>
-        <p class="lede">
-          I'm a 2025 Global Korea Scholarship undergraduate awardee, heading to
+        <svg class="olive-branch" viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 30 Q 45 6, 124 10" fill="none" stroke="#4f6d3f" stroke-width="1.4" stroke-linecap="round"/>
+          <ellipse cx="28" cy="22" rx="6" ry="2.6" fill="#4f6d3f" transform="rotate(-28 28 22)"/>
+          <ellipse cx="48" cy="16" rx="6.5" ry="2.7" fill="#4f6d3f" transform="rotate(-18 48 16)"/>
+          <ellipse cx="68" cy="12" rx="7" ry="2.8" fill="#4f6d3f" transform="rotate(-12 68 12)"/>
+          <ellipse cx="88" cy="10.5" rx="6.5" ry="2.7" fill="#4f6d3f" transform="rotate(-7 88 10.5)"/>
+          <ellipse cx="106" cy="10" rx="5.5" ry="2.4" fill="#4f6d3f" transform="rotate(-3 106 10)"/>
+          <circle cx="40" cy="13" r="1.6" fill="#a30d1f"/>
+          <circle cx="78" cy="8" r="1.6" fill="#a30d1f"/>
+        </svg>
+        <span class="eyebrow" data-i18n="hero.eyebrow"><span class="flag-pip"></span>GKS-U 2025 · Embassy Track</span>
+        <span class="arabic arabic-name">شفاء قرمش</span>
+        <h1 data-i18n="hero.h1">Hi, I'm Shefa.</h1>
+        <p class="lede" data-i18n="hero.lede">
+          A Palestinian student carrying a small piece of home with me to
+          Korea. I'm a 2025 Global Korea Scholarship awardee heading to
           <strong>Hanyang University</strong> to study <strong>Industrial
-          Engineering</strong>. This little corner of the web is where I share
-          a bit about my journey, my work, and what I'm curious about.
+          Engineering</strong>. This is where I share a bit of the journey
+          from <em>فلسطين</em> to <em>한국</em>.
         </p>
         <div class="meta">
-          <span>Hanyang University · Seoul</span>
-          <span>Industrial Engineering</span>
-          <span>GKS-U 2025, Embassy Track</span>
+          <span data-i18n="hero.meta1">From Palestine · فلسطين</span>
+          <span data-i18n="hero.meta2">Hanyang University · Seoul</span>
+          <span data-i18n="hero.meta3">Industrial Engineering</span>
         </div>
       </section>
 
       <section class="about" id="about">
-        <h2>About</h2>
-        <p>
-          I'm Shefa Qarmash — a 2025 Global Korea Scholarship (GKS-U) awardee
-          through the <strong>Embassy Track</strong>, accepted to study
-          <strong>Industrial Engineering at Hanyang University</strong>. Before
-          starting my degree, I'll spend a year on the mandatory Korean
-          language program — and I'm honestly excited for both the linguistic
-          deep-dive and the engineering ahead.
+        <h2 data-i18n="about.h2">About</h2>
+        <p data-i18n="about.p1">
+          I'm Shefa Qarmash — Palestinian, and a 2025 Global Korea Scholarship
+          (GKS-U) awardee through the <strong>Embassy Track</strong>, accepted
+          to study <strong>Industrial Engineering at Hanyang University</strong>.
+          Before starting my degree, I'll spend a year on the mandatory Korean
+          language program — excited for both the linguistic deep-dive and the
+          engineering ahead.
         </p>
-        <p>
+        <p data-i18n="about.p2">
           I'm drawn to industrial engineering because it sits at the
           intersection of systems, people, and decisions — figuring out how
-          things can work better, faster, more humanely. Outside class I love
-          <em>[your interests — writing, photography, a sport, a hobby]</em>.
+          things can work better, faster, more humanely. Coming from a place
+          where resilience and ingenuity are inherited, that lens feels
+          natural.
+        </p>
+        <p data-i18n="about.p3">
           This page is a small public record of what I'm learning along the
-          way.
+          way — from <span class="arabic">فلسطين</span> to Seoul.
         </p>
       </section>
 
       <section id="education">
-        <h2>Education</h2>
+        <h2 data-i18n="edu.h2">Education</h2>
 
         <div class="item">
           <div class="body">
-            <h3>Hanyang University</h3>
-            <p>B.S. in Industrial Engineering · GKS-U Scholar (Embassy Track)</p>
+            <h3 data-i18n="edu.1.h3">Hanyang University</h3>
+            <p data-i18n="edu.1.p">B.S. in Industrial Engineering · GKS-U Scholar (Embassy Track)</p>
           </div>
           <div class="when">2026 — 2030</div>
         </div>
 
         <div class="item">
           <div class="body">
-            <h3>Korean Language Program</h3>
-            <p>Mandatory one-year intensive Korean course at a designated GKS language institute · TOPIK Level 3+ target</p>
+            <h3 data-i18n="edu.2.h3">Korean Language Program</h3>
+            <p data-i18n="edu.2.p">Mandatory one-year intensive Korean course at a designated GKS language institute · TOPIK Level 3+ target</p>
           </div>
           <div class="when">2025 — 2026</div>
         </div>
 
         <div class="item">
           <div class="body">
-            <h3>Global Korea Scholarship — Undergraduate</h3>
-            <p>Awarded by NIIED · Embassy Track · Class of 2025</p>
+            <h3 data-i18n="edu.3.h3">Global Korea Scholarship — Undergraduate</h3>
+            <p data-i18n="edu.3.p">Awarded by NIIED · Embassy Track · Class of 2025</p>
           </div>
           <div class="when">2025</div>
         </div>
 
-        <div class="item">
-          <div class="body">
-            <h3>[Your high school]</h3>
-            <p>[City, country]</p>
-          </div>
-          <div class="when">[Year — Year]</div>
-        </div>
       </section>
 
       <section id="interests">
-        <h2>What I'm into</h2>
-        <p>
+        <h2 data-i18n="interests.h2">What I'm into</h2>
+        <p data-i18n="interests.p">
           A loose, evolving list of subjects I keep coming back to.
         </p>
         <div class="tags">
-          <span class="tag">Industrial engineering</span>
-          <span class="tag">Operations &amp; systems</span>
-          <span class="tag">Korean language</span>
-          <span class="tag">Cross-cultural exchange</span>
-          <span class="tag">Data &amp; optimization</span>
-          <span class="tag">[A hobby]</span>
-          <span class="tag">[Something you read about]</span>
+          <span class="tag" data-i18n="tag.1">Industrial engineering</span>
+          <span class="tag" data-i18n="tag.2">Operations &amp; systems</span>
+          <span class="tag" data-i18n="tag.3">Korean language</span>
+          <span class="tag" data-i18n="tag.4">Arabic literature</span>
+          <span class="tag" data-i18n="tag.5">Tatreez &amp; folk art</span>
+          <span class="tag" data-i18n="tag.6">Olive harvests</span>
+          <span class="tag" data-i18n="tag.7">Data &amp; optimization</span>
+          <span class="tag" data-i18n="tag.8">Cross-cultural exchange</span>
         </div>
       </section>
 
       <section id="writing">
-        <h2>Notes &amp; writing</h2>
-        <p style="color: var(--muted);">
+        <h2 data-i18n="writing.h2">Notes &amp; writing</h2>
+        <p style="color: var(--muted);" data-i18n="writing.p">
           Coming soon — reflections on the GKS embassy-track application,
           starting Korean from scratch, and life at Hanyang.
         </p>
       </section>
 
       <section id="contact">
-        <h2>Get in touch</h2>
-        <p>
+        <h2 data-i18n="contact.h2">Get in touch</h2>
+        <p data-i18n="contact.p">
           The easiest way to reach me is by email. I'm also happy to connect
-          with future GKS applicants — feel free to write.
+          with fellow Palestinian students and future GKS applicants — feel
+          free to write, in English, العربية, or 한국어.
         </p>
         <div class="contact-links">
           <a href="mailto:your.email@example.com">your.email@example.com</a>
@@ -344,16 +461,126 @@
           <a href="https://github.com/shefaqarmash" target="_blank" rel="noopener">GitHub</a>
         </div>
       </section>
+
+      <p class="closing">
+        من فلسطين إلى كوريا
+        <span class="latin">From Palestine, with love — to Korea.</span>
+      </p>
     </main>
 
     <footer>
-      <span>© <span id="year"></span> Shefa Qarmash</span>
-      <span>Made with care · Seoul / 서울</span>
+      <span>© <span id="year"></span> <span data-i18n="footer.copy">Shefa Qarmash · شفاء قرمش</span></span>
+      <span data-i18n="footer.route">Palestine → Seoul · فلسطين ← 서울</span>
     </footer>
   </div>
+  <div class="tatreez bottom" aria-hidden="true"></div>
 
   <script>
+    const I18N = {
+      en: {
+        'brand': 'Shefa Qarmash',
+        'nav.about': 'About',
+        'nav.education': 'Education',
+        'nav.contact': 'Contact',
+        'hero.eyebrow': '<span class="flag-pip"></span>GKS-U 2025 · Embassy Track',
+        'hero.h1': "Hi, I'm Shefa.",
+        'hero.lede': 'A Palestinian student carrying a small piece of home with me to Korea. I\'m a 2025 Global Korea Scholarship awardee heading to <strong>Hanyang University</strong> to study <strong>Industrial Engineering</strong>. This is where I share a bit of the journey from <em>فلسطين</em> to <em>한국</em>.',
+        'hero.meta1': 'From Palestine · فلسطين',
+        'hero.meta2': 'Hanyang University · Seoul',
+        'hero.meta3': 'Industrial Engineering',
+        'about.h2': 'About',
+        'about.p1': 'I\'m Shefa Qarmash — Palestinian, and a 2025 Global Korea Scholarship (GKS-U) awardee through the <strong>Embassy Track</strong>, accepted to study <strong>Industrial Engineering at Hanyang University</strong>. Before starting my degree, I\'ll spend a year on the mandatory Korean language program — excited for both the linguistic deep-dive and the engineering ahead.',
+        'about.p2': 'I\'m drawn to industrial engineering because it sits at the intersection of systems, people, and decisions — figuring out how things can work better, faster, more humanely. Coming from a place where resilience and ingenuity are inherited, that lens feels natural.',
+        'about.p3': 'This page is a small public record of what I\'m learning along the way — from <span class="arabic">فلسطين</span> to Seoul.',
+        'edu.h2': 'Education',
+        'edu.1.h3': 'Hanyang University',
+        'edu.1.p': 'B.S. in Industrial Engineering · GKS-U Scholar (Embassy Track)',
+        'edu.2.h3': 'Korean Language Program',
+        'edu.2.p': 'Mandatory one-year intensive Korean course at a designated GKS language institute · TOPIK Level 3+ target',
+        'edu.3.h3': 'Global Korea Scholarship — Undergraduate',
+        'edu.3.p': 'Awarded by NIIED · Embassy Track · Class of 2025',
+        'interests.h2': "What I'm into",
+        'interests.p': 'A loose, evolving list of subjects I keep coming back to.',
+        'tag.1': 'Industrial engineering',
+        'tag.2': 'Operations &amp; systems',
+        'tag.3': 'Korean language',
+        'tag.4': 'Arabic literature',
+        'tag.5': 'Tatreez &amp; folk art',
+        'tag.6': 'Olive harvests',
+        'tag.7': 'Data &amp; optimization',
+        'tag.8': 'Cross-cultural exchange',
+        'writing.h2': 'Notes &amp; writing',
+        'writing.p': 'Coming soon — reflections on the GKS embassy-track application, starting Korean from scratch, and life at Hanyang.',
+        'contact.h2': 'Get in touch',
+        'contact.p': 'The easiest way to reach me is by email. I\'m also happy to connect with fellow Palestinian students and future GKS applicants — feel free to write, in English, العربية, or 한국어.',
+        'footer.copy': 'Shefa Qarmash · شفاء قرمش',
+        'footer.route': 'Palestine → Seoul · فلسطين ← 서울'
+      },
+      ar: {
+        'brand': 'شفاء قرمش',
+        'nav.about': 'نبذة',
+        'nav.education': 'التعليم',
+        'nav.contact': 'تواصل',
+        'hero.eyebrow': '<span class="flag-pip"></span>منحة GKS للبكالوريوس 2025 · المسار السفاراتي',
+        'hero.h1': 'مرحبًا، أنا شفاء.',
+        'hero.lede': 'طالبة فلسطينية أحمل قطعة صغيرة من الوطن معي إلى كوريا. حصلت على منحة الحكومة الكورية لعام 2025 للالتحاق بـ<strong>جامعة هانيانغ</strong> ودراسة <strong>الهندسة الصناعية</strong>. هنا أشارك جزءًا من رحلتي من <em>فلسطين</em> إلى <em>한국</em>.',
+        'hero.meta1': 'من فلسطين',
+        'hero.meta2': 'جامعة هانيانغ · سيول',
+        'hero.meta3': 'الهندسة الصناعية',
+        'about.h2': 'نبذة',
+        'about.p1': 'أنا شفاء قرمش — فلسطينية، وحاصلة على منحة الحكومة الكورية للبكالوريوس (GKS-U) لعام 2025 عبر <strong>المسار السفاراتي</strong>، للدراسة في <strong>قسم الهندسة الصناعية بجامعة هانيانغ</strong>. قبل بدء دراستي الجامعية، سأقضي عامًا في برنامج اللغة الكورية المكثّف — متحمّسة للتعمّق في اللغة وللهندسة التي تنتظرني.',
+        'about.p2': 'ما يجذبني إلى الهندسة الصناعية هو أنّها تقع عند تقاطع الأنظمة والناس والقرارات — كيف نجعل الأشياء تعمل بشكل أفضل وأسرع وأكثر إنسانية. حين تأتين من مكان يتوارث أهله الصمود والإبداع، تبدو هذه النظرة طبيعيّة.',
+        'about.p3': 'هذه الصفحة سجلّ صغير لما أتعلّمه على طول الطريق — من <span class="arabic">فلسطين</span> إلى سيول.',
+        'edu.h2': 'التعليم',
+        'edu.1.h3': 'جامعة هانيانغ',
+        'edu.1.p': 'بكالوريوس في الهندسة الصناعية · حاصلة على منحة GKS-U (المسار السفاراتي)',
+        'edu.2.h3': 'برنامج اللغة الكورية',
+        'edu.2.p': 'دورة كورية مكثّفة لمدّة عام في معهد لغة معتمد ضمن GKS · الهدف: TOPIK مستوى 3 فأكثر',
+        'edu.3.h3': 'منحة الحكومة الكورية — البكالوريوس',
+        'edu.3.p': 'بإشراف NIIED · المسار السفاراتي · دفعة 2025',
+        'interests.h2': 'اهتماماتي',
+        'interests.p': 'قائمة مفتوحة ومتغيّرة لمواضيع أعود إليها دائمًا.',
+        'tag.1': 'الهندسة الصناعية',
+        'tag.2': 'العمليات والأنظمة',
+        'tag.3': 'اللغة الكورية',
+        'tag.4': 'الأدب العربي',
+        'tag.5': 'التطريز والفنون الشعبية',
+        'tag.6': 'موسم قطف الزيتون',
+        'tag.7': 'البيانات والتحسين',
+        'tag.8': 'التبادل الثقافي',
+        'writing.h2': 'كتابات وملاحظات',
+        'writing.p': 'قريبًا — تأمّلات حول تقديم طلب GKS عبر المسار السفاراتي، تعلّم الكورية من الصفر، والحياة في هانيانغ.',
+        'contact.h2': 'للتواصل',
+        'contact.p': 'أسهل طريقة للوصول إليّ هي عبر البريد الإلكتروني. يسعدني أيضًا التواصل مع زملائي الطلاب الفلسطينيين ومتقدّمي منحة GKS مستقبلًا — لا تتردّدوا في الكتابة بالعربية أو الإنجليزية أو الكورية.',
+        'footer.copy': 'شفاء قرمش · Shefa Qarmash',
+        'footer.route': 'فلسطين ← سيول · Palestine → Seoul'
+      }
+    };
+
+    function applyLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      const btn = document.getElementById('lang-toggle');
+      btn.textContent = lang === 'en' ? 'العربية' : 'English';
+      btn.setAttribute('aria-label', lang === 'en' ? 'Switch to Arabic' : 'Switch to English');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      const next = document.documentElement.lang === 'ar' ? 'en' : 'ar';
+      applyLang(next);
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    let saved = 'en';
+    try { saved = localStorage.getItem('lang') || 'en'; } catch (e) {}
+    applyLang(saved);
   </script>
 </body>
 </html>
