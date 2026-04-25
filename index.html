@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shefa Qarmash</title>
+  <meta name="description" content="Personal site of Shefa Qarmash — Global Korea Scholarship (GKS) Undergraduate Awardee 2025, Embassy Track. Industrial Engineering at Hanyang University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --bg-alt: #f1ede4;
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --muted: #8a8275;
+      --accent: #b8412f;
+      --accent-soft: #e8d5c4;
+      --line: #e6dfd0;
+      --max-w: 760px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 600; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* Header */
+    header {
+      padding: 28px 0 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+
+    nav .brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul a {
+      color: var(--ink-soft);
+      border-bottom: none;
+    }
+
+    nav ul a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 6px 12px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      margin-bottom: 18px;
+    }
+
+    .hero .lede {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 560px;
+    }
+
+    .hero .meta {
+      margin-top: 28px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero .meta span::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--muted);
+      border-radius: 50%;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* Sections */
+    section {
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    section.about p + p { margin-top: 1em; }
+
+    /* Cards / lists */
+    .item {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child { border-bottom: none; }
+
+    .item .body p {
+      margin: 4px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+    }
+
+    .item .when {
+      font-size: 0.88rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      padding: 4px 11px;
+      background: var(--bg-alt);
+      color: var(--ink-soft);
+      border-radius: 100px;
+    }
+
+    /* Contact */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-top: 18px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 540px) {
+      nav ul { gap: 16px; }
+      .hero { padding: 56px 0 40px; }
+      .item { flex-direction: column; gap: 4px; }
+      .item .when { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <nav>
+        <a href="#" class="brand">Shefa Qarmash</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <span class="eyebrow">GKS-U 2025 · Embassy Track</span>
+        <h1>Hi, I'm Shefa.</h1>
+        <p class="lede">
+          I'm a 2025 Global Korea Scholarship undergraduate awardee, heading to
+          <strong>Hanyang University</strong> to study <strong>Industrial
+          Engineering</strong>. This little corner of the web is where I share
+          a bit about my journey, my work, and what I'm curious about.
+        </p>
+        <div class="meta">
+          <span>Hanyang University · Seoul</span>
+          <span>Industrial Engineering</span>
+          <span>GKS-U 2025, Embassy Track</span>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <h2>About</h2>
+        <p>
+          I'm Shefa Qarmash — a 2025 Global Korea Scholarship (GKS-U) awardee
+          through the <strong>Embassy Track</strong>, accepted to study
+          <strong>Industrial Engineering at Hanyang University</strong>. Before
+          starting my degree, I'll spend a year on the mandatory Korean
+          language program — and I'm honestly excited for both the linguistic
+          deep-dive and the engineering ahead.
+        </p>
+        <p>
+          I'm drawn to industrial engineering because it sits at the
+          intersection of systems, people, and decisions — figuring out how
+          things can work better, faster, more humanely. Outside class I love
+          <em>[your interests — writing, photography, a sport, a hobby]</em>.
+          This page is a small public record of what I'm learning along the
+          way.
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <div class="item">
+          <div class="body">
+            <h3>Hanyang University</h3>
+            <p>B.S. in Industrial Engineering · GKS-U Scholar (Embassy Track)</p>
+          </div>
+          <div class="when">2026 — 2030</div>
+        </div>
+
+        <div class="item">
+          <div class="body">
+            <h3>Korean Language Program</h3>
+            <p>Mandatory one-year intensive Korean course at a designated GKS language institute · TOPIK Level 3+ target</p>
+          </div>
+          <div class="when">2025 — 2026</div>
+        </div>
+
+        <div class="item">
+          <div class="body">
+            <h3>Global Korea Scholarship — Undergraduate</h3>
+            <p>Awarded by NIIED · Embassy Track · Class of 2025</p>
+          </div>
+          <div class="when">2025</div>
+        </div>
+
+        <div class="item">
+          <div class="body">
+            <h3>[Your high school]</h3>
+            <p>[City, country]</p>
+          </div>
+          <div class="when">[Year — Year]</div>
+        </div>
+      </section>
+
+      <section id="interests">
+        <h2>What I'm into</h2>
+        <p>
+          A loose, evolving list of subjects I keep coming back to.
+        </p>
+        <div class="tags">
+          <span class="tag">Industrial engineering</span>
+          <span class="tag">Operations &amp; systems</span>
+          <span class="tag">Korean language</span>
+          <span class="tag">Cross-cultural exchange</span>
+          <span class="tag">Data &amp; optimization</span>
+          <span class="tag">[A hobby]</span>
+          <span class="tag">[Something you read about]</span>
+        </div>
+      </section>
+
+      <section id="writing">
+        <h2>Notes &amp; writing</h2>
+        <p style="color: var(--muted);">
+          Coming soon — reflections on the GKS embassy-track application,
+          starting Korean from scratch, and life at Hanyang.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Get in touch</h2>
+        <p>
+          The easiest way to reach me is by email. I'm also happy to connect
+          with future GKS applicants — feel free to write.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:your.email@example.com">your.email@example.com</a>
+          <a href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/your-handle/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://github.com/shefaqarmash" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Shefa Qarmash</span>
+      <span>Made with care · Seoul / 서울</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
